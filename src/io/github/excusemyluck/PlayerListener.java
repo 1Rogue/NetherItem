@@ -1,5 +1,6 @@
 package io.github.excusemyluck;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -33,8 +34,8 @@ public class PlayerListener implements Listener {
 
 		if (material.equals(Material.NETHER_STAR)
 				& action == Action.RIGHT_CLICK_BLOCK) {
-			int itemIds[] = { 254, 257, 258, 257, 261, 276, 277, 278, 279, 292,
-					293, 294 };
+			List<Integer> temp = pl.getConfig().getIntegerList("itemIds");
+			int itemIds[] = temp.toArray(new Integer[temp.size()]);
 			short durabilites[] = { 25, 66, 78, 99, 152, 164, 127, 220 };
 			int enchants[] = { 1, 2, 3, 4, 5 };
 			int enchantLvl[] = { 1, 2, 3, 4, 5 };
